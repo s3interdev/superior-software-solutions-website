@@ -1,0 +1,8 @@
+{
+	"compilerOptions": {
+		"paths": {
+			"@/*": ["./*"]
+		}
+	},
+	"include": ["**/*.js", "**.*.jsx", "pages/index.jsx", "app/page.jsx", "app/layout.jsx"]
+}
