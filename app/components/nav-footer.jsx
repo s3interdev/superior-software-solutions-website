@@ -27,7 +27,7 @@ const NavFooter = ({
 	return (
 		<>
 			{/* navigation footer start */}
-			<div className="container mx-auto px-4 pt-16 md:px-24 lg:px-8">
+			<div className="container mx-auto border-t px-4 pt-16 md:px-24 lg:px-8">
 				{/* grid container start */}
 				<div className="row-gap-10 mb-8 grid gap-16 lg:grid-cols-6">
 					{/* logo section start */}
