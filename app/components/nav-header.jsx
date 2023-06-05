@@ -119,7 +119,10 @@ const NavHeader = ({ logo: { url }, name, navHeader: { navigation } }) => {
 										{navigation.map((item) => (
 											<li key={item.title}>
 												<Link href={item.link.url}>
-													<span className="tracking-wide transition-colors duration-300 hover:text-content-alt">
+													<span
+														onClick={() => setIsMenuOpen(false)}
+														className="tracking-wide transition-colors duration-300 hover:text-content-alt"
+													>
 														{item.link.text}
 													</span>
 												</Link>
@@ -127,7 +130,10 @@ const NavHeader = ({ logo: { url }, name, navHeader: { navigation } }) => {
 										))}
 
 										<Link href="/services/request-a-consult">
-											<span className="mt-5 inline-flex h-10 w-full items-center justify-center rounded bg-accent px-6 font-medium tracking-wide text-highlight-alt shadow-md transition duration-300 hover:bg-accent-alt focus:shadow focus:outline-none">
+											<span
+												onClick={() => setIsMenuOpen(false)}
+												className="mt-5 inline-flex h-10 w-full items-center justify-center rounded bg-accent px-6 font-medium tracking-wide text-highlight-alt shadow-md transition duration-300 hover:bg-accent-alt focus:shadow focus:outline-none"
+											>
 												Request a consult
 											</span>
 										</Link>
