@@ -10,6 +10,7 @@ export const qryDataGlobal = gql`
 				url
 			}
 			tagLine
+			tagLineSubtitle
 			metaDescription
 			contacts {
 				lists {
@@ -19,6 +20,9 @@ export const qryDataGlobal = gql`
 			}
 			socialMedia {
 				lists {
+					image {
+						url
+					}
 					title
 					subtitle
 				}
@@ -33,6 +37,15 @@ export const qryDataGlobal = gql`
 				}
 			}
 			navFooterInformation {
+				navigation {
+					title
+					link {
+						text
+						url
+					}
+				}
+			}
+			navFooterBusiness {
 				navigation {
 					title
 					link {

@@ -21,11 +21,13 @@ const RootLayout = async ({ children }) => {
 		logo,
 		name,
 		navFooterAction,
+		navFooterBusiness,
 		navFooterInformation,
 		navFooterLegal,
 		navHeader,
 		socialMedia,
 		tagLine,
+		tagLineSubtitle,
 	} = await getDataGlobal();
 
 	return (
@@ -35,7 +37,7 @@ const RootLayout = async ({ children }) => {
 					<NavHeader logo={logo} name={name} navHeader={navHeader} />
 				</header>
 
-				<main>
+				<main className="container mx-auto px-4 py-5 md:px-24 lg:px-8">
 					<GoogleRecaptcha>
 						{children}
 						<Analytics />
@@ -47,10 +49,12 @@ const RootLayout = async ({ children }) => {
 						logo={logo}
 						name={name}
 						navFooterAction={navFooterAction}
+						navFooterBusiness={navFooterBusiness}
 						navFooterInformation={navFooterInformation}
 						navFooterLegal={navFooterLegal}
 						socialMedia={socialMedia}
 						tagLine={tagLine}
+						tagLineSubtitle={tagLineSubtitle}
 					/>
 				</footer>
 			</body>
