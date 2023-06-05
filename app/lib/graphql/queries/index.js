@@ -75,3 +75,28 @@ export const qryDataGlobal = gql`
 		}
 	}
 `;
+
+/* get required legal policy page data by passing appropriate slug */
+export const qryDataPageLegalPolicy = gql`
+	query qryDataPageLegalPolicy($slug: String!) {
+		pages(where: { slug: $slug }) {
+			title
+			slug
+			metaDescription
+			hero {
+				callToAction {
+					title
+					subtitle
+				}
+			}
+			content {
+				content {
+					title
+					content {
+						html
+					}
+				}
+			}
+		}
+	}
+`;
