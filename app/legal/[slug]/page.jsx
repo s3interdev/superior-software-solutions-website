@@ -1,5 +1,5 @@
-import { getDataGlobal, getDataPageLegalPolicy } from '../../lib/retrieval';
-import { DisplayContent, DisplayHeroStandard } from '../../components';
+import { getDataGlobal, getDataPageLegalPolicy } from '@/lib/retrieval';
+import { DisplayContent, DisplayHeroStandard } from '@/components';
 
 export async function generateMetadata({ params }) {
 	/* fetch application metadata */

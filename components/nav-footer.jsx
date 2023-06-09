@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { DisplayImage } from './';
+import { DisplayImage } from '@/components/';
 
 const NavFooter = ({
 	logo: { url: lUrl },
