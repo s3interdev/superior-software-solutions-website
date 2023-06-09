@@ -1,9 +1,9 @@
 import { Analytics } from '@vercel/analytics/react';
 
-import { GoogleRecaptcha, NavFooter, NavHeader } from './components/';
-import { getDataGlobal } from './lib/retrieval';
+import { GoogleRecaptcha, NavFooter, NavHeader } from '@/components';
+import { getDataGlobal } from '@/lib/retrieval';
 
-import './globals.css';
+import '@/app/globals.css';
 
 export const metadata = {
 	icons: {

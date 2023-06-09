@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
-import { DisplayImage } from '.';
+import { DisplayImage } from '@/components/';
 
 const NavHeader = ({ logo: { url }, name, navHeader: { navigation } }) => {
 	/* declare variables */
