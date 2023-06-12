@@ -1,7 +1,7 @@
 import { Analytics } from '@vercel/analytics/react';
 
 import { GoogleRecaptcha, NavFooter, NavHeader } from '@/components';
-import { getDataGlobal } from '@/lib/retrieval';
+import { getDataGlobal } from '@/lib/services';
 
 import '@/app/globals.css';
 
