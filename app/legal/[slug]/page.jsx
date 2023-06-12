@@ -1,4 +1,4 @@
-import { getDataGlobal, getDataPageLegalPolicy } from '@/lib/retrieval';
+import { getDataGlobal, getDataPageLegalPolicy } from '@/lib/services';
 import { DisplayContent, DisplayHeroStandard } from '@/components';
 
 export async function generateMetadata({ params }) {
@@ -30,7 +30,8 @@ const LegalPolicyPage = async ({ params }) => {
 	} = await getDataPageLegalPolicy(params.slug);
 
 	/* initialize hero section background color */
-	const backgroundColor = 'bg-highlight';
+	const colorPri = 'from-primary-alt';
+	const colorSec = 'to-primary';
 
 	return (
 		<article>
@@ -40,7 +41,8 @@ const LegalPolicyPage = async ({ params }) => {
 				<DisplayHeroStandard
 					title={hcTitle}
 					subtitle={hcSubtitle}
-					backgroundColor={backgroundColor}
+					colorPri={colorPri}
+					colorSec={colorSec}
 				/>
 				{/* hero end */}
 			</section>
