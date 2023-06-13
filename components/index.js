@@ -1,3 +1,4 @@
+export { default as DisplayCallToAction } from '@/components/display-call-to-action';
 export { default as DisplayContent } from '@/components/display-content';
 export { default as DisplayHeroStandard } from '@/components/display-hero-standard';
 export { default as DisplayImage } from '@/components/display-image';
