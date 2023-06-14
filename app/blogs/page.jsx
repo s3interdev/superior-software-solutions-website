@@ -2,13 +2,17 @@ import Link from 'next/link';
 
 import { format, parseISO } from 'date-fns';
 
-import { getDataGlobal, getDataPageBlogs, getDataSummaryBlogs } from '@/lib/services';
+import {
+	getDataGlobal,
+	getDataPageBlogPosts,
+	getDataSummaryBlogPosts,
+} from '@/lib/services';
 import { DisplayCallToAction, DisplayHeroStandard, DisplayImage } from '@/components';
 
 export async function generateMetadata() {
 	/* fetch application metadata */
 	const { name } = await getDataGlobal();
-	const { title, metaDescription } = await getDataPageBlogs();
+	const { title, metaDescription } = await getDataPageBlogPosts();
 
 	return {
 		title: title ? title + ' | ' + name : name,
@@ -27,10 +31,10 @@ const PostSummaryPage = async () => {
 			content: { html: ccHtml },
 			link: { text: clText, url: clUrl },
 		},
-	} = await getDataPageBlogs();
+	} = await getDataPageBlogPosts();
 
 	/* get blogs summary data */
-	const summary = await getDataSummaryBlogs();
+	const summary = await getDataSummaryBlogPosts();
 
 	/* initialize hero section background color */
 	const colorPri = 'from-accent';
@@ -77,20 +81,19 @@ const PostSummaryPage = async () => {
 									</Link>
 									{/* post title end */}
 
+									{/* post author and publish date start */}
+									<div className="mt-3">
+										<p className="font-semibold">
+											{post.team.name} | {format(parseISO(post.date), 'MMMM do, yyyy')}
+										</p>
+									</div>
+									{/* post author and publish date end */}
+
 									{/* post excerpt start */}
 									<div className="mt-3">
 										<p className="">{post.excerpt}</p>
 									</div>
 									{/* post excerpt end */}
-
-									{/* post author and publish date start */}
-									<div className="mt-5">
-										<p className="text-sm">
-											{post.team.name} <span className="font-bold">|</span>{' '}
-											{format(parseISO(post.date), 'MMMM do, yyyy')}
-										</p>
-									</div>
-									{/* post author and publish date end */}
 								</div>
 								{/* content start */}
 							</div>
