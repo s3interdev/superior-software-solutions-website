@@ -2,13 +2,17 @@ import Link from 'next/link';
 
 import { format, parseISO } from 'date-fns';
 
-import { getDataGlobal, getDataPageBlogs, getDataSummaryBlogs } from '@/lib/services';
+import {
+	getDataGlobal,
+	getDataPageBlogPosts,
+	getDataSummaryBlogPosts,
+} from '@/lib/services';
 import { DisplayCallToAction, DisplayHeroStandard, DisplayImage } from '@/components';
 
 export async function generateMetadata() {
 	/* fetch application metadata */
 	const { name } = await getDataGlobal();
-	const { title, metaDescription } = await getDataPageBlogs();
+	const { title, metaDescription } = await getDataPageBlogPosts();
 
 	return {
 		title: title ? title + ' | ' + name : name,
@@ -20,17 +24,17 @@ const PostSummaryPage = async () => {
 	/* get blogs page data */
 	const {
 		hero: {
-			callToAction: { title: hcTitle, subtitle: hcSubtitle },
+			callToAction: { title: hecTitle, subtitle: hecSubtitle },
 		},
 		callToAction: {
-			title: cTitle,
-			content: { html: ccHtml },
-			link: { text: clText, url: clUrl },
+			title: ctTitle,
+			content: { html: ctcHtml },
+			link: { text: ctlText, url: ctlUrl },
 		},
-	} = await getDataPageBlogs();
+	} = await getDataPageBlogPosts();
 
 	/* get blogs summary data */
-	const summary = await getDataSummaryBlogs();
+	const summary = await getDataSummaryBlogPosts();
 
 	/* initialize hero section background color */
 	const colorPri = 'from-accent';
@@ -42,8 +46,8 @@ const PostSummaryPage = async () => {
 			<section id="hero-section">
 				{/* hero start */}
 				<DisplayHeroStandard
-					title={hcTitle}
-					subtitle={hcSubtitle}
+					title={hecTitle}
+					subtitle={hecSubtitle}
 					colorPri={colorPri}
 					colorSec={colorSec}
 				/>
@@ -71,26 +75,25 @@ const PostSummaryPage = async () => {
 								<div className="p-5">
 									{/* post title start */}
 									<Link href={`/blogs/${post.slug}`}>
-										<span className="mt-2 inline-block text-lg font-medium text-accent hover:cursor-pointer">
+										<span className="mt-2 inline-block text-lg font-medium text-content-alt hover:cursor-pointer hover:text-accent">
 											{post.title}
 										</span>
 									</Link>
 									{/* post title end */}
+
+									{/* post author and publish date start */}
+									<div className="mt-3">
+										<p className="font-semibold">
+											{post.team.name} | {format(parseISO(post.date), 'MMMM do, yyyy')}
+										</p>
+									</div>
+									{/* post author and publish date end */}
 
 									{/* post excerpt start */}
 									<div className="mt-3">
 										<p className="">{post.excerpt}</p>
 									</div>
 									{/* post excerpt end */}
-
-									{/* post author and publish date start */}
-									<div className="mt-5">
-										<p className="text-sm">
-											{post.team.name} <span className="font-bold">|</span>{' '}
-											{format(parseISO(post.date), 'MMMM do, yyyy')}
-										</p>
-									</div>
-									{/* post author and publish date end */}
 								</div>
 								{/* content start */}
 							</div>
@@ -105,10 +108,10 @@ const PostSummaryPage = async () => {
 			<section id="call-to-action-section" className="container mx-auto my-5 px-1">
 				{/* call to action start */}
 				<DisplayCallToAction
-					buttonText={clText}
-					content={ccHtml}
-					title={cTitle}
-					url={clUrl}
+					buttonText={ctlText}
+					content={ctcHtml}
+					title={ctTitle}
+					url={ctlUrl}
 				/>
 				{/* call to action end */}
 			</section>
