@@ -45,8 +45,8 @@ const NavHeader = ({ logo: { url }, name, navHeader: { navigation } }) => {
 				<ul className="hidden items-center space-x-8 lg:flex">
 					<li>
 						<Link href="/solutions/request-a-consult">
-							<span className="transform rounded-lg bg-highlight-alt px-5 py-2 font-medium uppercase tracking-wide text-accent transition-colors duration-300 hover:bg-accent-alt focus:outline-none focus:ring focus:ring-accent focus:ring-opacity-80">
-								Request a consult
+							<span className="transform rounded-lg bg-accent px-5 py-2 font-semibold uppercase tracking-wide text-highlight-alt transition-colors duration-300 hover:bg-accent focus:outline-none focus:ring focus:ring-accent focus:ring-opacity-80">
+								Book a consult
 							</span>
 						</Link>
 					</li>
@@ -134,7 +134,7 @@ const NavHeader = ({ logo: { url }, name, navHeader: { navigation } }) => {
 												onClick={() => setIsMenuOpen(false)}
 												className="mt-5 inline-flex h-10 w-full items-center justify-center rounded bg-accent px-6 font-medium uppercase tracking-wide text-highlight-alt shadow-md transition duration-300 hover:bg-accent-alt focus:shadow focus:outline-none"
 											>
-												Request a consult
+												Book a consult
 											</span>
 										</Link>
 									</ul>

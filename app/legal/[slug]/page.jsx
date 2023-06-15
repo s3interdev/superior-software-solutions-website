@@ -1,5 +1,9 @@
 import { getDataGlobal, getDataPageLegalPolicy } from '@/lib/services';
-import { DisplayContent, DisplayHeroStandard } from '@/components';
+import {
+	DisplayContent,
+	DisplayHeroStandard,
+	DisplayUnderlineStandard,
+} from '@/components';
 
 export async function generateMetadata({ params }) {
 	/* fetch application metadata */
@@ -19,12 +23,12 @@ const LegalPolicyPage = async ({ params }) => {
 	/* get legal policy page data */
 	const {
 		hero: {
-			callToAction: { title: hcTitle, subtitle: hcSubtitle },
+			callToAction: { title: hecTitle, subtitle: hecSubtitle },
 		},
 		content: {
 			content: {
-				title: ccTitle,
-				content: { html: cccHtml },
+				title: cocTitle,
+				content: { html: coccHtml },
 			},
 		},
 	} = await getDataPageLegalPolicy(params.slug);
@@ -39,8 +43,8 @@ const LegalPolicyPage = async ({ params }) => {
 			<section id="hero-section">
 				{/* hero start */}
 				<DisplayHeroStandard
-					title={hcTitle}
-					subtitle={hcSubtitle}
+					title={hecTitle}
+					subtitle={hecSubtitle}
 					colorPri={colorPri}
 					colorSec={colorSec}
 				/>
@@ -50,15 +54,19 @@ const LegalPolicyPage = async ({ params }) => {
 
 			{/* content section start */}
 			<section id="content-section">
-				<div className="container mx-auto px-4 py-16 md:px-24 lg:px-8 lg:py-20">
+				<div className="container mx-auto my-8 px-1">
 					{/* heading start */}
-					<h3 className="pb-8 text-2xl font-semibold text-content-alt">
-						{name} {ccTitle}
+					<h3 className="mb-5 text-2xl font-semibold text-content-alt">
+						{name} {cocTitle}
 					</h3>
 					{/* heading end */}
 
+					{/* underline start */}
+					<DisplayUnderlineStandard />
+					{/* underline end */}
+
 					{/* content start */}
-					<DisplayContent content={cccHtml} />
+					<DisplayContent content={coccHtml} />
 					{/* content end */}
 				</div>
 			</section>
