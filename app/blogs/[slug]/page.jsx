@@ -2,6 +2,7 @@ import { format, parseISO } from 'date-fns';
 
 import { getDataGlobal, getDataPageBlogPost } from '@/lib/services';
 import {
+	DisplayBlogCategories,
 	DisplayBlogFeaturedImage,
 	DisplayBlogWidget,
 	DisplayCallToAction,
@@ -118,7 +119,7 @@ const PostPage = async ({ params }) => {
 							className="container mx-auto mb-3 max-w-full rounded-lg bg-highlight-alt p-5 shadow-lg"
 						>
 							{/* header start */}
-							<h3 className="mb-3 text-lg font-semibold uppercase text-content-alt">
+							<h3 className="mb-3 border-b border-b-content-alt pb-3 text-lg font-semibold uppercase text-content-alt">
 								Similar Posts
 							</h3>
 							{/* header end */}
@@ -138,10 +139,14 @@ const PostPage = async ({ params }) => {
 							className="container mx-auto mb-3 max-w-full rounded-lg bg-highlight-alt p-5 shadow-lg"
 						>
 							{/* header start */}
-							<h3 className="mb-3 text-lg font-semibold uppercase text-content-alt">
+							<h3 className="mb-3 border-b border-b-content-alt pb-3 text-lg font-semibold uppercase text-content-alt">
 								Categories
 							</h3>
 							{/* header end */}
+
+							{/* post categories start */}
+							<DisplayBlogCategories />
+							{/* post categories end */}
 						</section>
 						{/* blog categories end */}
 					</div>
