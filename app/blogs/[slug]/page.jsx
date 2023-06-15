@@ -3,9 +3,11 @@ import { format, parseISO } from 'date-fns';
 import { getDataGlobal, getDataPageBlogPost } from '@/lib/services';
 import {
 	DisplayBlogFeaturedImage,
+	DisplayBlogWidget,
 	DisplayCallToAction,
 	DisplayContent,
 	DisplayImage,
+	DisplayUnderlineStandard,
 } from '@/components/';
 
 export async function generateMetadata({ params }) {
@@ -23,18 +25,20 @@ const PostPage = async ({ params }) => {
 	/* get blog page data */
 	const {
 		title,
-		image: { url: iUrl },
+		slug,
+		image: { url: imUrl },
 		team: {
-			name: tName,
-			image: { url: tiUrl },
-			bio: { html: tbHtml },
+			name: teName,
+			image: { url: teiUrl },
+			bio: { html: tebHtml },
 		},
+		categories,
 		date,
-		content: { html: cHtml },
+		content: { html: coHtml },
 		callToAction: {
-			title: cTitle,
-			content: { html: ccHtml },
-			link: { text: clText, url: clUrl },
+			title: ctTitle,
+			content: { html: ctcHtml },
+			link: { text: ctlText, url: ctlUrl },
 		},
 	} = await getDataPageBlogPost(params.slug);
 
@@ -43,7 +47,7 @@ const PostPage = async ({ params }) => {
 			{/* hero section start */}
 			<section id="hero-section">
 				{/* hero start */}
-				<DisplayBlogFeaturedImage imgSrc={iUrl} imgAlt={title} />
+				<DisplayBlogFeaturedImage imgSrc={imUrl} imgAlt={title} />
 				{/* hero end */}
 			</section>
 			{/* hero section end */}
@@ -61,8 +65,12 @@ const PostPage = async ({ params }) => {
 							</h2>
 							{/* header end */}
 
+							{/* underline start */}
+							<DisplayUnderlineStandard />
+							{/* underline end */}
+
 							{/* content start */}
-							<DisplayContent content={cHtml} />
+							<DisplayContent content={coHtml} />
 							{/* content end */}
 						</section>
 
@@ -85,18 +93,18 @@ const PostPage = async ({ params }) => {
 						{/* miscellaneous information start */}
 						<section
 							id="misc-info-section"
-							className="container mx-auto max-w-full rounded-lg bg-highlight-alt p-5 shadow-lg"
+							className="container mx-auto mb-3 max-w-full rounded-lg bg-highlight-alt p-5 shadow-lg"
 						>
 							<div className="flex items-center">
 								{/* author image start */}
 								<div className="relative h-20 w-20">
-									<DisplayImage imgSrc={tiUrl} imgAlt={tName} />
+									<DisplayImage imgSrc={teiUrl} imgAlt={teName} />
 								</div>
 								{/* author image end */}
 
 								{/* miscellaneous start */}
 								<div className="ml-3">
-									<p className="font-semibold">{tName}</p>
+									<p className="font-semibold text-content-alt">{teName}</p>
 									<p className="mt-1">{format(parseISO(date), 'MMMM do, yyyy')}</p>
 								</div>
 								{/* miscellaneous end */}
@@ -104,13 +112,38 @@ const PostPage = async ({ params }) => {
 						</section>
 						{/* miscellaneous information end */}
 
-						<section>
-							<h1>Post Widget</h1>
-						</section>
+						{/* similar posts widget start */}
+						<section
+							id="similar-posts-widget-section"
+							className="container mx-auto mb-3 max-w-full rounded-lg bg-highlight-alt p-5 shadow-lg"
+						>
+							{/* header start */}
+							<h3 className="mb-3 text-lg font-semibold uppercase text-content-alt">
+								Similar Posts
+							</h3>
+							{/* header end */}
 
-						<section>
-							<h1>Categories</h1>
+							{/* similar blog widget start */}
+							<DisplayBlogWidget
+								slug={slug}
+								categories={categories.map((category) => category.slug)}
+							/>
+							{/* similar blog widget end */}
 						</section>
+						{/* similar posts widget end */}
+
+						{/* blog categories start */}
+						<section
+							id="blog-categories-section"
+							className="container mx-auto mb-3 max-w-full rounded-lg bg-highlight-alt p-5 shadow-lg"
+						>
+							{/* header start */}
+							<h3 className="mb-3 text-lg font-semibold uppercase text-content-alt">
+								Categories
+							</h3>
+							{/* header end */}
+						</section>
+						{/* blog categories end */}
 					</div>
 					{/* content container secondary end */}
 				</div>
@@ -119,13 +152,13 @@ const PostPage = async ({ params }) => {
 			{/* content section end */}
 
 			{/* call to action section start */}
-			<section id="call-to-action-section" className="container mx-auto my-5 px-1">
+			<section id="call-to-action-section" className="container mx-auto my-8 px-1">
 				{/* call to action start */}
 				<DisplayCallToAction
-					buttonText={clText}
-					content={ccHtml}
-					title={cTitle}
-					url={clUrl}
+					buttonText={ctlText}
+					content={ctcHtml}
+					title={ctTitle}
+					url={ctlUrl}
 				/>
 				{/* call to action end */}
 			</section>
