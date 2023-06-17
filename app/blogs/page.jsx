@@ -28,13 +28,14 @@ const PostSummaryPage = async () => {
 		},
 		callToAction: {
 			title: ctTitle,
+			image: { url: ctiUrl },
 			content: { html: ctcHtml },
 			link: { text: ctlText, url: ctlUrl },
 		},
 	} = await getDataPageBlogPosts();
 
 	/* get blogs summary data */
-	const summary = await getDataSummaryBlogPosts();
+	const blogSummary = await getDataSummaryBlogPosts();
 
 	/* initialize hero section background color */
 	const colorPri = 'from-accent';
@@ -59,11 +60,11 @@ const PostSummaryPage = async () => {
 			<section id="card-display-section" className="container mx-auto my-8 px-1">
 				{/* cards start */}
 				<div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-					{summary.map((post) => {
+					{blogSummary.map((post) => {
 						return (
 							<div
 								key={post.slug}
-								className="overflow-hidden rounded bg-highlight-alt shadow-lg"
+								className="overflow-hidden rounded border bg-highlight-alt shadow-lg"
 							>
 								{/* image start */}
 								<div className="relative h-64 w-full rounded md:h-80">
@@ -110,6 +111,7 @@ const PostSummaryPage = async () => {
 				<DisplayCallToAction
 					buttonText={ctlText}
 					content={ctcHtml}
+					image={ctiUrl}
 					title={ctTitle}
 					url={ctlUrl}
 				/>
