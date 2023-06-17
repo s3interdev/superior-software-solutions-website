@@ -15,19 +15,19 @@ const DisplayCallToAction = ({ buttonText, content, image, title, url }) => {
 					{/* image end */}
 
 					{/* content area start */}
-					<div class="max-w-xl px-6 py-12 lg:w-1/2 lg:max-w-5xl">
+					<div className="max-w-xl px-6 py-12 lg:w-1/2 lg:max-w-5xl">
 						{/* heading start */}
-						<h3 class="text-2xl font-semibold text-content-alt">{title}</h3>
+						<h3 className="text-2xl font-semibold text-content-alt">{title}</h3>
 						{/* heading end */}
 
 						{/* content start */}
-						<div class="mt-5">
+						<div className="mt-5">
 							<DisplayContent content={content} />
 						</div>
 						{/* content end */}
 
 						{/* button link start */}
-						<div class="mt-8">
+						<div className="mt-8">
 							<Link href={url}>
 								<span className="inline-flex w-full transform items-center justify-center rounded-lg bg-accent px-5 py-2 font-semibold uppercase tracking-wide text-highlight-alt duration-300 hover:bg-accent focus:ring focus:ring-accent focus:ring-opacity-80">
 									{buttonText}
