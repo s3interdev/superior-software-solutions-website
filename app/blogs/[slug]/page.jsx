@@ -2,6 +2,7 @@ import { format, parseISO } from 'date-fns';
 
 import { getDataGlobal, getDataPageBlogPost } from '@/lib/services';
 import {
+	DisplayBlogAuthor,
 	DisplayBlogCategories,
 	DisplayBlogFeaturedImage,
 	DisplayBlogWidget,
@@ -60,6 +61,7 @@ const PostPage = async ({ params }) => {
 				<div className="flex flex-col md:flex-row">
 					{/* content container primary start */}
 					<div className="md:w-3/4 md:px-3">
+						{/* blog content start */}
 						<section id="blog-content-section">
 							{/* header start */}
 							<h2 className="mb-5 text-xl font-semibold text-content-alt md:text-2xl">
@@ -75,18 +77,31 @@ const PostPage = async ({ params }) => {
 							<DisplayContent content={coHtml} />
 							{/* content end */}
 						</section>
+						{/* blog content end  */}
 
-						<section>
-							<h1>Author Bio</h1>
+						{/* author information start */}
+						<section id="author-information-section" className="mb-8 mt-20">
+							{/* information start */}
+							<DisplayBlogAuthor
+								authorName={teName}
+								authorImage={teiUrl}
+								authorBio={tebHtml}
+							/>
+							{/* information end */}
 						</section>
+						{/* author information end */}
 
+						{/*  */}
 						<section>
 							<h1>Comment Form</h1>
 						</section>
+						{/*  */}
 
+						{/*  */}
 						<section>
 							<h1>Comments</h1>
 						</section>
+						{/*  */}
 					</div>
 					{/* content container primary end */}
 
