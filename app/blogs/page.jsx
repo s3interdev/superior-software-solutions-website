@@ -28,6 +28,7 @@ const PostSummaryPage = async () => {
 		},
 		callToAction: {
 			title: ctTitle,
+			image: { url: ctiUrl },
 			content: { html: ctcHtml },
 			link: { text: ctlText, url: ctlUrl },
 		},
@@ -63,7 +64,7 @@ const PostSummaryPage = async () => {
 						return (
 							<div
 								key={post.slug}
-								className="overflow-hidden rounded bg-highlight-alt shadow-lg"
+								className="overflow-hidden rounded border bg-highlight-alt shadow-lg"
 							>
 								{/* image start */}
 								<div className="relative h-64 w-full rounded md:h-80">
@@ -110,6 +111,7 @@ const PostSummaryPage = async () => {
 				<DisplayCallToAction
 					buttonText={ctlText}
 					content={ctcHtml}
+					image={ctiUrl}
 					title={ctTitle}
 					url={ctlUrl}
 				/>
