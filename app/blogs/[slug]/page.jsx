@@ -38,6 +38,7 @@ const PostPage = async ({ params }) => {
 		content: { html: coHtml },
 		callToAction: {
 			title: ctTitle,
+			image: { url: ctiUrl },
 			content: { html: ctcHtml },
 			link: { text: ctlText, url: ctlUrl },
 		},
@@ -94,17 +95,17 @@ const PostPage = async ({ params }) => {
 						{/* miscellaneous information start */}
 						<section
 							id="misc-info-section"
-							className="container mx-auto mb-3 max-w-full rounded-lg bg-highlight-alt p-5 shadow-lg"
+							className="container mx-auto mb-3 max-w-full rounded-lg border bg-highlight-alt p-5 shadow-lg"
 						>
 							<div className="flex items-center">
 								{/* author image start */}
-								<div className="relative h-20 w-20">
+								<div className="relative h-20 w-20 flex-none">
 									<DisplayImage imgSrc={teiUrl} imgAlt={teName} />
 								</div>
 								{/* author image end */}
 
 								{/* miscellaneous start */}
-								<div className="ml-3">
+								<div className="ml-3 flex-grow">
 									<p className="font-semibold text-content-alt">{teName}</p>
 									<p className="mt-1">{format(parseISO(date), 'MMMM do, yyyy')}</p>
 								</div>
@@ -116,7 +117,7 @@ const PostPage = async ({ params }) => {
 						{/* similar posts widget start */}
 						<section
 							id="similar-posts-widget-section"
-							className="container mx-auto mb-3 max-w-full rounded-lg bg-highlight-alt p-5 shadow-lg"
+							className="container mx-auto mb-3 max-w-full rounded-lg border bg-highlight-alt p-5 shadow-lg"
 						>
 							{/* header start */}
 							<h3 className="mb-3 border-b border-b-content-alt pb-3 text-lg font-semibold uppercase text-content-alt">
@@ -136,7 +137,7 @@ const PostPage = async ({ params }) => {
 						{/* blog categories start */}
 						<section
 							id="blog-categories-section"
-							className="container mx-auto mb-3 max-w-full rounded-lg bg-highlight-alt p-5 shadow-lg"
+							className="container mx-auto mb-3 max-w-full rounded-lg border bg-highlight-alt p-5 shadow-lg"
 						>
 							{/* header start */}
 							<h3 className="mb-3 border-b border-b-content-alt pb-3 text-lg font-semibold uppercase text-content-alt">
@@ -157,11 +158,12 @@ const PostPage = async ({ params }) => {
 			{/* content section end */}
 
 			{/* call to action section start */}
-			<section id="call-to-action-section" className="container mx-auto my-8 px-1">
+			<section id="call-to-action-section" className="container mx-auto my-5 px-1">
 				{/* call to action start */}
 				<DisplayCallToAction
 					buttonText={ctlText}
 					content={ctcHtml}
+					image={ctiUrl}
 					title={ctTitle}
 					url={ctlUrl}
 				/>
