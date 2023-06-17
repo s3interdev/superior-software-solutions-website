@@ -81,7 +81,7 @@ const BlogCategoriesPage = async ({ params }) => {
 									<div className="p-5">
 										{/* post title start */}
 										<Link href={`/blogs/${post.slug}`}>
-											<span className="mt-2 inline-block text-lg font-medium text-content-alt hover:cursor-pointer hover:text-accent">
+											<span className="mt-2 inline-block text-lg font-medium text-accent hover:cursor-pointer hover:text-accent">
 												{post.title}
 											</span>
 										</Link>

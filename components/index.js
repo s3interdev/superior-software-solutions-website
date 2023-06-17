@@ -1,5 +1,6 @@
 export { default as DisplayCallToAction } from '@/components/display-call-to-action';
 export { default as DisplayContent } from '@/components/display-content';
+export { default as DisplayBlogAuthor } from '@/components/display-blog-author';
 export { default as DisplayBlogCategories } from '@/components/display-blog-categories';
 export { default as DisplayBlogFeaturedImage } from '@/components/display-blog-featured-image';
 export { default as DisplayBlogWidget } from '@/components/display-blog-widget';

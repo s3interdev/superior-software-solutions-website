@@ -14,7 +14,7 @@ const DisplayBlogCategories = async () => {
 						<span
 							className={`block cursor-pointer ${
 								index === categories.length - 1 ? 'border-b-0' : 'border-b'
-							} mb-3 pb-3 transition duration-300 hover:text-accent`}
+							} mb-3 pb-3 text-accent transition duration-300 hover:text-accent`}
 						>
 							{category.title}
 						</span>
