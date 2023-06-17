@@ -26,7 +26,7 @@ const DisplayBlogsWidget = async ({ slug, categories }) => {
 							</p>
 
 							<Link href={`/blogs/${blog.slug}`}>
-								<span className="cursor-pointer transition duration-300 hover:text-accent">
+								<span className="cursor-pointer text-accent transition duration-300 hover:text-accent">
 									{blog.title}
 								</span>
 							</Link>
