@@ -48,7 +48,8 @@ export default async function comments(req, res) {
 			/* the result was bogus */
 			return res.status(200).json({
 				status: 'failure',
-				message: 'Your request was not accepted, please try again.',
+				message:
+					'Your request was not accepted, please try again with patience and understanding.',
 			});
 		}
 	} catch (error) {
