@@ -15,7 +15,7 @@ const DisplayBlogAuthor = ({ authorName, authorImage, authorBio }) => {
 
 				{/* blog author name start */}
 				<div className="mt-3">
-					<p className="text-lg font-semibold text-content-alt">{authorName}</p>
+					<h3 className="text-lg font-semibold text-content-alt">{authorName}</h3>
 				</div>
 				{/* blog author name end */}
 

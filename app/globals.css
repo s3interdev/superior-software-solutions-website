@@ -3,3 +3,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	.form-field {
+		@apply mt-1 w-full rounded border border-content py-2 focus:border-content focus:outline-none focus:ring-1 focus:ring-content active:border-content;
+	}
+}
