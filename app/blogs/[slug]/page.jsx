@@ -4,6 +4,8 @@ import { getDataGlobal, getDataPageBlogPost } from '@/lib/services';
 import {
 	DisplayBlogAuthor,
 	DisplayBlogCategories,
+	DisplayBlogCommentForm,
+	DisplayBlogComments,
 	DisplayBlogFeaturedImage,
 	DisplayBlogWidget,
 	DisplayCallToAction,
@@ -91,17 +93,21 @@ const PostPage = async ({ params }) => {
 						</section>
 						{/* author information end */}
 
-						{/*  */}
-						<section>
-							<h1>Comment Form</h1>
+						{/* blog comment form start */}
+						<section id="blog-comment-form-section" className="my-8">
+							{/* comment form start */}
+							<DisplayBlogCommentForm slug={slug} />
+							{/* comment form end */}
 						</section>
-						{/*  */}
+						{/* blog comment form end */}
 
-						{/*  */}
-						<section>
-							<h1>Comments</h1>
+						{/* blog comments start */}
+						<section id="blog-comments-section" className="my-8">
+							{/* comments start */}
+							<DisplayBlogComments slug={slug} />
+							{/* comments end */}
 						</section>
-						{/*  */}
+						{/* blog comments start */}
 					</div>
 					{/* content container primary end */}
 
