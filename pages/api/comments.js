@@ -2,13 +2,8 @@ import { GraphQLClient } from 'graphql-request';
 
 import { createComment } from '@/lib/graphql/mutations';
 
-/* api endpoint */
 const endpoint = process.env.NEXT_PUBLIC_CONTENT_API_RW;
-
-/* auth token */
 const authToken = process.env.NEXT_PUBLIC_AUTH_TOKEN;
-
-/* recaptcha secret key */
 const secretKey = process.env.RECAPTCHA_SECRET_KEY;
 
 export default async function comments(req, res) {
@@ -45,7 +40,7 @@ export default async function comments(req, res) {
 					'Your comment has been received. It will be shared after moderation, with anticipation and positivity.',
 			});
 		} else {
-			/* the result was bogus */
+			/* the result was not good */
 			return res.status(200).json({
 				status: 'failure',
 				message:
