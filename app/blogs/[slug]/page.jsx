@@ -64,7 +64,7 @@ const PostPage = async ({ params }) => {
 					{/* content container primary start */}
 					<div className="md:w-3/4 md:px-3">
 						{/* blog content start */}
-						<section id="blog-content-section">
+						<section id="blog-content-section" className="mb-8">
 							{/* header start */}
 							<h2 className="mb-5 text-xl font-semibold text-content-alt md:text-2xl">
 								{title}
