@@ -43,10 +43,7 @@ const DisplayBlogCommentForm = ({ slug }) => {
 				/* submit comment + slug + token to the backend */
 				const submission = await fetch('/api/comments', {
 					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json',
-						Accept: 'application/json, text/plain, */*',
-					},
+					headers: { 'Content-Type': 'application/json' },
 					body: JSON.stringify({ ...data, ...blog, ...token }),
 				});
 
@@ -82,6 +79,10 @@ const DisplayBlogCommentForm = ({ slug }) => {
 					Leave a Comment
 				</h3>
 				{/* form header end */}
+
+				<p className="my-5 w-full text-sm">
+					Your email address will not be published. All fields are required.
+				</p>
 
 				{/* form body start */}
 				<form onSubmit={handleSubmit(onSubmit)}>
