@@ -80,7 +80,7 @@ const DisplayBlogCommentForm = ({ slug }) => {
 				</h3>
 				{/* form header end */}
 
-				<p className="my-5 w-full text-sm">
+				<p className="my-5 w-full text-xs">
 					Your email address will not be published. All fields are required.
 				</p>
 
