@@ -8,6 +8,7 @@ import DisplayBlogFeaturedImage from '@/components/display-blog-featured-image';
 import DisplayBlogWidget from '@/components/display-blog-widget';
 import DisplayHeroStandard from '@/components/display-hero-standard';
 import DisplayImage from '@/components/display-image';
+import DisplayReviewStars from '@/components/display-review-stars';
 import DisplayUnderlineStandard from '@/components/display-underline-standard';
 import NavFooter from '@/components/nav-footer';
 import NavHeader from '@/components/nav-header';
@@ -24,6 +25,7 @@ export {
 	DisplayBlogWidget,
 	DisplayHeroStandard,
 	DisplayImage,
+	DisplayReviewStars,
 	DisplayUnderlineStandard,
 	NavFooter,
 	NavHeader,

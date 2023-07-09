@@ -66,7 +66,7 @@ const PostPage = async ({ params }) => {
 						{/* blog content start */}
 						<section id="blog-content-section" className="mb-8">
 							{/* header start */}
-							<h2 className="mb-5 text-xl font-semibold text-content-alt md:text-2xl">
+							<h2 className="mb-5 text-xl font-semibold uppercase text-content-alt md:text-2xl">
 								{title}
 							</h2>
 							{/* header end */}
