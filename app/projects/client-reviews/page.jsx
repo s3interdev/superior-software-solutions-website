@@ -4,6 +4,7 @@ import {
 	DisplayContent,
 	DisplayHeroStandard,
 	DisplayImage,
+	DisplayReviewStars,
 	DisplayUnderlineStandard,
 } from '@/components';
 
@@ -64,7 +65,9 @@ const ClientReviewsPage = async () => {
 			<section id="content-section">
 				<div className="container mx-auto my-8 px-1">
 					{/* heading start */}
-					<h3 className="mb-5 text-2xl font-semibold text-content-alt">{cocTitle}</h3>
+					<h3 className="mb-5 text-2xl font-semibold uppercase text-content-alt">
+						{cocTitle}
+					</h3>
 					{/* heading end */}
 
 					{/* underline start */}
@@ -105,13 +108,17 @@ const ClientReviewsPage = async () => {
 
 									<div className="ml-3 flex-grow">
 										{/* reviewer name and business start */}
-										<p className="font-semibold text-content-alt">
+										<p className="text-sm font-semibold text-content-alt md:text-base">
 											{review.reviewerName}
-											<span className="text-sm font-normal">
+											<span className="text-xs font-normal md:text-sm">
 												, {review.reviewerBusinessName}
 											</span>
 										</p>
 										{/* reviewer name and business end */}
+
+										{/* reviewer rating start */}
+										<DisplayReviewStars rating={review.reviewRating} />
+										{/* reviewer rating end */}
 									</div>
 								</div>
 								{/* reviewer information end */}

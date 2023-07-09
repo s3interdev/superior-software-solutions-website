@@ -14,6 +14,7 @@ module.exports = {
 				'accent-alt': '#E1F3FC',
 				content: '#424242',
 				'content-alt': '#404040',
+				'content-light': '#D3D3D3',
 				error: '#C25451',
 				highlight: '#FFF7EB',
 				'highlight-alt': '#FFFFFF',
