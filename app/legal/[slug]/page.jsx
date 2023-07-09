@@ -56,7 +56,7 @@ const LegalPolicyPage = async ({ params }) => {
 			<section id="content-section">
 				<div className="container mx-auto my-8 px-1">
 					{/* heading start */}
-					<h3 className="mb-5 text-2xl font-semibold text-content-alt">
+					<h3 className="mb-5 text-2xl font-semibold uppercase text-content-alt">
 						{name} {cocTitle}
 					</h3>
 					{/* heading end */}
