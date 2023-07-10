@@ -6,6 +6,10 @@
 
 @layer components {
 	.form-field {
-		@apply mt-1 w-full rounded border border-content py-2 focus:border-content focus:outline-none focus:ring-1 focus:ring-content active:border-content;
+		@apply mt-1 w-full rounded border border-content-light py-2 focus:border-content-medium focus:outline-none focus:ring-0 focus:ring-content-medium active:border-content-medium;
+	}
+
+	.checkbox-field {
+		@apply h-5 w-5 rounded border border-content-medium text-content-medium focus:ring-content-medium;
 	}
 }
