@@ -98,7 +98,7 @@ const ClientReviewsPage = async () => {
 								{/* reviewer information start */}
 								<div className="mt-8 flex items-center">
 									{/* reviewer image start */}
-									<div className="relative h-10 w-10 flex-none">
+									<div className="relative h-16 w-16 flex-none">
 										<DisplayImage
 											imgSrc={review.reviewerImage.url}
 											imgAlt={review.reviewerName}
@@ -110,9 +110,9 @@ const ClientReviewsPage = async () => {
 										{/* reviewer name and business start */}
 										<p className="text-sm font-semibold text-content-alt md:text-base">
 											{review.reviewerName}
-											<span className="text-xs font-normal md:text-sm">
-												, {review.reviewerBusinessName}
-											</span>
+										</p>
+										<p className="text-xs font-normal md:text-sm">
+											{review.reviewerBusinessName}
 										</p>
 										{/* reviewer name and business end */}
 
